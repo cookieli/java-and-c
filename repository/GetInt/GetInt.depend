@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1490690343 source:f:\repository\getint\buffer.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<buffer.h>
+	<ctype.h>
+	<string.h>
+
+1490679398 f:\repository\getint\\buffer.h
+
+1490753134 source:f:\repository\getint\main.c
+	<stdio.h>
+	<stdlib.h>
+	<buffer.h>
+	<ctype.h>
+

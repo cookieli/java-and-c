@@ -1,0 +1,47 @@
+package com.lizhengxian.basic;
+
+public class IterativeTST<Value> {
+	 private Node root ;
+     private class Node{
+    	 char c ;
+    	 Node left,mid ,right;
+    	 Value val;
+     }
+     public void put(String key,Value val){
+    	 if(root ==null) {
+    		 root = new Node();
+    		 root.c = key.charAt(0);
+    	 }
+    	 Node x = root ;
+    	 int d = 1;
+    	 while(d < key.length()){
+    		 char c = key.charAt(d);
+    		 if(c < x.c) {
+    			 if(x.left ==null){ 
+    				 x.left = new Node();
+    				 x.left.c = c;
+    				}
+    			 x = x.left;
+    		 }
+    		 else if (c > x.c){
+    			 if(x.right ==null){ 
+    				 x.right = new Node();
+    				 x.right.c = c;
+    				}
+    			 x = x.right;
+    		 }
+    		 else{
+    			 if(x.mid == null){
+    				 x.mid = new Node();
+    				 x.mid.c = key.charAt(++d);
+    			 }
+    			 x = x.mid ;
+    		 }
+    		 d++;
+    	 }
+     }
+     public static void main(String[]args){
+    	 IterativeTST<Integer> st = new IterativeTST();
+    	 st.put("a", 1);
+     }
+}

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1490927227 source:f:\repository\pattern\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

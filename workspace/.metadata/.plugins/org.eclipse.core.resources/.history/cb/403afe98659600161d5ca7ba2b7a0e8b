@@ -1,0 +1,17 @@
+package com.lizhengxian.linked;
+
+import com.lizhengxian.linked.LinkedDemo.Node;
+
+public class Demo {
+      public static void main(String args[]){
+    	  LinkedDemo<Integer> ld =new LinkedDemo<Integer>();
+    	  ld.addFirst(7);
+    	  ld.addLast(9);
+    	  ld.addLast(3);
+    	  ld.addLast(12);
+    	  ld.addLast(8);
+    	  System.out.println(ld.max(ld.first,ld.first.item));
+      }
+     
+     
+}

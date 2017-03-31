@@ -1,0 +1,61 @@
+package com.lizheng.LinkedList;
+
+import java.util.LinkedList;
+
+public class LinkedTest<T> {
+	    Node<T> first;
+	    Node<T> last;
+	    public LinkedTest(){}
+	    public void addFirst(T item){
+	    	final Node<T> f=first;
+	    	final Node<T> l=last;
+	    	Node<T> nowNode=new Node<T>(null,item,l);
+	    	first=nowNode;
+	    	if(first==null){
+	    		last=nowNode;
+	    	}else{
+	    		f.pre =first;	
+	    	}
+	    }
+	    public void addLast(T item){
+	    	final Node<T> f=first;
+	    	final Node<T> l=last;
+	    	Node<T> nowNode= new Node<T>(l,item,null);
+	    	if(first==null){
+	    		first=nowNode;
+	    		last =nowNode;
+	    	}else{
+	    		l.next=nowNode;
+	    	}
+	    }
+	    public void deleteFirst(){
+	    	if(first!=null){
+	    	first =first.next;
+	    	first.pre=null;
+	    	}else{
+	    		return;
+	    	}
+	    }
+	    public void deleteLast(){
+	    	if(first!=null){
+	    	last=last.pre;
+	    	last.next=null;
+	    	}else{
+	    		return;
+	    	}
+	    	
+	    }
+	    
+	    
+       class Node<T>{
+    	   Node<T> pre;
+    	   T item;
+    	   Node<T> next;
+    	   public Node(){}
+    	   public Node(Node<T> pre,T item,Node<T> next){
+    		   this.pre=pre;
+    		   this.item=item;
+    		   this.next= next;
+    	   }
+       }
+}

@@ -1,0 +1,13 @@
+package com.lizhengxian.basic;
+
+public class Demo {
+      private int item;
+      public static void main(String[]args){
+    	  Demo d = new Demo();
+    	  Demo c = new Demo();
+    	  int[] a = new int[]{1,2,3,4};
+    	  d.item = a[0];
+    	  c.item = a[3];
+    	  System.out.println(d);
+      }
+}

@@ -1,0 +1,75 @@
+package com.lizhengxian.basic;
+
+public class IterativeTST<Value> {
+	 private Node root ;
+     private class Node{
+    	 char c ;
+    	 Node left,mid ,right;
+    	 Value val;
+     }
+     private Node addRight(Node n){
+    	 Node x = n ;
+    	 x.right = new Node();
+    	 x = x.right;
+    	 return x;
+     }
+     private Node addLeft(Node n){
+    	 Node x = n ;
+    	 x.left = new Node();
+    	 x = x.left;
+    	 return x;
+     }
+     private Node addMid(Node n){
+    	 Node x = n ;
+    	 x.mid = new Node();
+    	 x = x.mid;
+    	 return x;
+     }
+     public void put(String key,Value val){
+    	if(root == null){
+    		root = new Node();
+    		root.c = key.charAt(0);
+    	}
+    	Node x = root ;
+    	int d = 0;
+    	while(d<key.length()){
+    		char c = key.charAt(d);
+    		if(c > x.c){
+    			if(x.right==null) {x = addRight(x);x.c = c;}
+    			else               x = x.right;
+    		}
+    		else if(c < x.c){
+    			if(x.left==null) {x = addLeft(x); x.c = c ;}  
+    			else              x = x.left ;
+    		}
+    		else if(d < key.length()-1){
+    			if(x.mid==null)  {x = addMid(x);x.c = key.charAt(++d); }
+    			else             {x = x.mid; d++;}
+    		}
+//    		if(d>=key.length()-1)                 {x.val = val ;d++;}
+    		else                 {x.val = val ; return;}
+    	}
+     }
+     public Value get(String key){
+    	 Node x = root ;
+    	 int d = 0 ;
+    	 while(d < key.length()-1&&x!=null){
+    		char c = key.charAt(d);
+    		if(c>x.c)                      x = x.right;
+    		else if(c<x.c)                 x = x.left ;
+    		else if(d < key.length()-1)   {x = x.mid ;d++;}
+    		
+    	 }
+    	 if(x==null) return null;
+    	 return x.val;
+     }
+     public static void main(String[]args){
+    	 IterativeTST<Integer> st = new IterativeTST();
+    	 st.put("abcsff", 1);
+    	 st.put("sck", 5);
+    	 st.put("ab",6);
+    	 st.put("ak", 7);
+    	 System.out.println(st.get("ak"));
+    	 
+     }
+}

@@ -1,0 +1,19 @@
+package com.lizhengxian.basic;
+
+public class BoyerMoore {
+    private int[] right;
+    private String pat;
+    public BoyerMoore(String pat) {
+    	this.pat = pat ;
+    	int R = 256 ;
+    	int M = pat.length();
+    	right = new int[R];
+    	for(int c = 0 ; c < R ; c++)
+    		right[c] = -1;
+    	for(int j = 0 ; j < M ;j++)
+    		right[pat.charAt(j)] = j;
+    }
+    public int search(String txt){
+    	
+    }
+}

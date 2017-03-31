@@ -1,0 +1,13 @@
+package com.lizhengxian.basic;
+
+public class Tandem {
+//      public static int repeatfind(String txt,String pat){
+//    	  KMP k = new KMP(pat);
+//      }
+      public static void main(String[]args){
+    	  KMP k = new KMP("abcababcab");
+    	  for(int i: k.findAll("abcabcababcababcababcab")){
+    		  System.out.println(i);
+    	  }
+      }
+}

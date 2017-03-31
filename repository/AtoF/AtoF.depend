@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1490612489 source:f:\repository\atof\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+

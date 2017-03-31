@@ -1,0 +1,23 @@
+package com.lizhengxian.linked;
+
+public class Demo {
+      public static void main(String args[]){
+    	  LinkedDemo<String> ld =new LinkedDemo<String>();
+    	  ld.addFirst("a");
+    	  ld.addLast("dddd");
+    	  ld.addLast("ccc");
+    	  ld.addLast("eee");
+    	  ld.addLast("gggg");
+    	  System.out.println(ld.size());
+    	  System.out.println(".......");
+    	  ld.delete(0);
+    	  System.out.println(ld.size());
+    	  System.out.print(ld.find(0).item+",");
+    	  System.out.print(ld.find(1).item+",");
+    	  System.out.print(ld.find(2).item+",");
+    	  System.out.print(ld.find(3).item+",");
+    	  //System.out.println(ld.find(4).item);
+    	  
+      }
+     
+}

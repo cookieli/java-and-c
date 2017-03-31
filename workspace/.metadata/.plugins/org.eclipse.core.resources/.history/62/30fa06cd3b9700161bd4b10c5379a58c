@@ -1,0 +1,16 @@
+package com.lizheng.LinkedList;
+
+
+
+public class Demo {
+      public static void main(String args[]){
+    	 LinkedTest<String> lt = new LinkedTest<String>();
+    	 lt.addFirst("a");
+    	 lt.addLast("b");
+    	 lt.addLast("c");
+    	 lt.addLast("d");
+    	 System.out.println(lt.breverse(lt.first).item);
+    	 
+    	 
+      }
+}

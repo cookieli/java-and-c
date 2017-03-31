@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1490680197 source:f:\repository\calculator\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stack.h>
+	<buffer.h>
+	<math.h>
+	<string.h>
+
+1490666333 f:\repository\calculator\\stack.h
+
+1490666333 source:f:\repository\calculator\stack.c
+	<stdio.h>
+	<stdlib.h>
+	<stack.h>
+
+1490679398 f:\repository\calculator\\buffer.h
+
+1490680125 source:f:\repository\calculator\buffer.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<buffer.h>
+	<ctype.h>
+

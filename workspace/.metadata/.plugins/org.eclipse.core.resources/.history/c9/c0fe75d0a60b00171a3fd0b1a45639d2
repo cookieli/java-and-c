@@ -1,0 +1,60 @@
+package com.lizhengxian.basic;
+
+import edu.princeton.cs.algs4.Queue;
+
+public class TST<Value> {
+	  private Node root;
+      private class Node{
+    	  char c;
+    	  Node left,right,mid;
+    	  Value val;
+      }
+      public Value get(String key){
+    	  Node x = get(root,key,0);
+    	  if(x==null)  return null;
+    	  return x.val;
+      }
+      private Node get(Node x,String key,int d){
+    	  if(x == null) return null;
+    	  char c = key.charAt(d);
+    	  if      (c<x.c)    return get(x.left,key,d);
+    	  else if (c>x.c)    return get(x.right,key,d);
+    	  else if (d<key.length()-1)
+    		                 return get(x.mid,key,d+1);
+    	  else return x;
+      }
+      public  void put(String key ,Value val){
+    	  root = put(root,key,val,0);
+      }
+      public Iterable<String> keysWithPrefix(String pre){
+    	  Queue<String> q = new Queue<String>();
+    	  collect(get(root,pre,0),pre,q);
+    	  return q;
+      }
+      private void collect(Node n,String pre,Queue<String> q){
+    	  if(n == null) return ;
+    	  if(n.val!=null)  q.enqueue(pre);
+    	  collect(n.left,pre+n.left.c,q);
+    	  collect(n.right,pre+n.right.c,q);
+    	  collect(n.mid,pre+n.mid.c,q);
+      }
+      private Node put(Node x ,String key,Value val,int d){
+    	  char c = key.charAt(d);
+    	  if(x==null)        {x = new Node();x.c = c;}
+    	  if(c < x.c)        {x.left = put(x.left,key,val,d);}
+    	  else if(c>x.c)     {x.right = put(x.right,key,val,d);}
+    	  else if(d<key.length()-1)
+    	                     {x.mid = put(x.mid,key,val,d+1);}
+    	  else                x.val = val;
+    	  return  x;
+      }
+      public static void main(String[]args){
+    	  TST<Integer> s = new TST<Integer>();
+    	  s.put("abd", 1);
+    	  s.put("absvdsvd", 0);
+    	  System.out.println(s.get("abd"));
+//    	  for(String t:s.keysWithPrefix("")){
+//    		  System.out.print(t+",");
+//    	  }
+      }
+}

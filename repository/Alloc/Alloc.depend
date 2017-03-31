@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1490771611 source:f:\repository\alloc\alloc.c
+	<stdio.h>
+	<stdlib.h>
+
+1490835025 source:f:\repository\alloc\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+

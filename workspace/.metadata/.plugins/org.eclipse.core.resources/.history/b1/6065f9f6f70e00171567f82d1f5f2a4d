@@ -1,0 +1,10 @@
+package com.lizhengxian.basic;
+
+import edu.princeton.cs.algs4.BinaryStdIn;
+
+public class Temp {
+     public static void main(String[] args){
+    	 String s = BinaryStdIn.readString();
+    	 System.out.println(s);
+     }
+}

@@ -1,0 +1,34 @@
+package com.lizhengxian.basic;
+
+public class IterativeTrieST<Value> {
+	 private static int R = 256 ;
+	 private Node root;
+     private static class Node{
+    	 private Object val  ;
+    	 private Node[] next = new Node[R];
+     }
+    public void put(String key,Value val){
+    	Node x = root;
+    	if(root == null) x = new Node();
+    }
+     
+     public Value get(String key){
+    	 Node x = root ;
+    	 int d = 0 ;
+    	 if(x == null) return  null;
+    	 while(d<key.length()&&x!=null){
+    		 char c = key.charAt(d);
+    		 x = x.next[c];
+    		 d++;
+    	 }
+    	 return (Value)x.val;
+     }
+     public static void main(String[]args){
+    	 IterativeTrieST<Integer> st = new IterativeTrieST<Integer>();
+           st.put("a", 1);
+    	 
+    	 System.out.println(st.root.val);
+    	// System.out.println(st.root.next['a']);
+    	 
+     }
+}
